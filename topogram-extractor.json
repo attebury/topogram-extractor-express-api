@@ -1,0 +1,31 @@
+{
+  "id": "@topogram/extractor-express-api",
+  "version": "1",
+  "tracks": [
+    "api"
+  ],
+  "source": "package",
+  "package": "@topogram/extractor-express-api",
+  "stack": {
+    "runtime": "node",
+    "framework": "express"
+  },
+  "capabilities": {
+    "routes": true,
+    "params": true,
+    "authHints": true
+  },
+  "candidateKinds": [
+    "capability",
+    "route",
+    "stack"
+  ],
+  "evidenceTypes": [
+    "runtime_source",
+    "parser_config"
+  ],
+  "extractors": [
+    "api.express-package"
+  ]
+}
+
