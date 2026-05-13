@@ -2,13 +2,24 @@
 
 Package-backed Topogram extractor for Express API route surfaces.
 
-This repository currently contains the extractor package skeleton. The next implementation pass will add precision-first extraction for Express route files, API capabilities, route metadata, params, auth hints, and stack evidence.
+This package extracts review-only API candidates from Express projects:
+
+- Express route handlers
+- API route and capability candidates
+- path and query parameter hints
+- authentication hints from middleware or route permissions metadata
+- Express stack evidence
 
 Extractor packages run only during `topogram extract`, emit review-only candidates, and never mutate the source app or write canonical `topo/**` directly.
+
+## Usage
+
+```bash
+topogram extract ./brownfield-app --out ./topogram-review --from api --extractor @topogram/extractor-express-api
+```
 
 ## Verification
 
 ```bash
 npm run check
 ```
-
