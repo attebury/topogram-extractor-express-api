@@ -40,7 +40,7 @@ if (json.candidateCounts?.apiRoutes < 4) throw new Error(`Expected at least four
 
 const candidatesPath = path.join(outputRoot, "topo", "candidates", "app", "api", "candidates.json");
 const candidates = JSON.parse(fs.readFileSync(candidatesPath, "utf8"));
-assert(candidates.stacks.some((entry) => entry.framework === "express"), "Expected Express stack candidate.");
+assert(candidates.stacks.includes("express"), "Expected Express stack candidate.");
 assert(candidates.routes.some((entry) => entry.method === "GET" && entry.path === "/tasks"), "Expected GET /tasks route.");
 assert(candidates.routes.some((entry) => entry.method === "GET" && entry.path === "/tasks/{taskId}"), "Expected GET /tasks/{taskId} route.");
 assert(candidates.routes.some((entry) => entry.method === "POST" && entry.path === "/tasks"), "Expected POST /tasks route.");
